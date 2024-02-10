@@ -15,6 +15,7 @@ help: _header
 	@echo start-dev / start-prod
 	@echo workspace
 	@echo test
+	@echo seed
 	@echo locales
 	@echo outdated / update / install
 	@echo build / build-dev
@@ -73,6 +74,9 @@ workspace:
 
 test:
 	@docker compose exec php php artisan test
+
+seed:
+	@docker compose exec php php artisan migrate:fresh --seed
 
 locales:
 	@docker compose exec php php artisan translatable:export es
