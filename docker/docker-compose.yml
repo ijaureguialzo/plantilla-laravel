@@ -1,0 +1,94 @@
+services:
+
+  https-portal:
+    image: steveltn/https-portal:${HTTPS_PORTAL_VERSION}
+    environment:
+      # noinspection HttpUrlsUsage
+      DOMAINS: >
+        ${HTTPS_PORTAL_SITES}
+      CLIENT_MAX_BODY_SIZE: 1024M
+      SERVER_NAMES_HASH_BUCKET_SIZE: 1024
+      WEBSOCKET: true
+      STAGE: ${HTTPS_PORTAL_STAGE}
+    volumes:
+      - https-portal_certs:/var/lib/https-portal
+      - https-portal_logs:/var/log/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - nginx
+      - phpmyadmin
+
+  mariadb:
+    image: mariadb:${MARIADB_VERSION}
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MARIADB_AUTO_UPGRADE=true
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    expose:
+      - 3306
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx.dev
+      args:
+        - NGINX_VERSION=${NGINX_VERSION}
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/:ro
+      - ../laravel:/var/www/html/laravel
+    expose:
+      - 80
+    depends_on:
+      - php
+
+  php:
+    hostname: php
+    build:
+      context: .
+      dockerfile: Dockerfile.php.prod
+      args:
+        - PHP_VERSION=${PHP_VERSION}
+        - ALPINE_VERSION=${ALPINE_VERSION}
+    environment:
+      - php.display_errors=on
+      - php.error_reporting=E_ALL
+      - PHP_XDEBUG_MODE=develop,coverage,debug
+      - PHP_XDEBUG_REMOTE_HOST=host.docker.internal
+      - PHP_XDEBUG_REMOTE_PORT=9003
+      - PHP_XDEBUG_REMOTE_CONNECT_BACK=yes
+      - PHP_XDEBUG_IDEKEY=plantilla-laravel
+    volumes:
+      - ../laravel:/var/www/html/laravel
+    depends_on:
+      - mariadb
+      - redis
+
+  phpmyadmin:
+    image: phpmyadmin:${PHPMYADMIN_VERSION}
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_PORT=3306
+      - UPLOAD_LIMIT=1g
+    expose:
+      - 80
+    depends_on:
+      - mariadb
+
+  redis:
+    image: redis:${REDIS_VERSION}-alpine
+    volumes:
+      - redis_data:/data
+    expose:
+      - 6379
+
+volumes:
+  https-portal_certs:
+  https-portal_logs:
+  mariadb_data:
+  redis_data:

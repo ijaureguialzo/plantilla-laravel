@@ -1,0 +1,27 @@
+services:
+
+  https-portal:
+    restart: unless-stopped
+    depends_on:
+      - postfix
+
+  mariadb:
+    restart: unless-stopped
+
+  nginx:
+    restart: unless-stopped
+
+  php:
+    restart: unless-stopped
+
+  phpmyadmin:
+    restart: unless-stopped
+
+  redis:
+    restart: unless-stopped
+
+  postfix:
+    restart: unless-stopped
+    image: boky/postfix
+    environment:
+      - ALLOWED_SENDER_DOMAINS=${POSTFIX_ALLOWED_SENDER_DOMAINS}

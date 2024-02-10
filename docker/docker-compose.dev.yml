@@ -1,0 +1,22 @@
+services:
+
+  https-portal:
+    environment:
+      DOMAINS: >
+        mailcatcher.plantilla-laravel.test -> http://mailcatcher:1080,
+        ${HTTPS_PORTAL_SITES}
+    depends_on:
+      - mailcatcher
+
+  php:
+    image: plantilla-laravel-php-dev
+    build:
+      dockerfile: Dockerfile.php.dev
+
+  phpmyadmin:
+    environment:
+      - PMA_USER=root
+      - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD}
+
+  mailcatcher:
+    image: stpaquet/alpinemailcatcher:${MAILCATCHER_VERSION:-latest}
