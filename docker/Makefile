@@ -10,7 +10,7 @@ endif
 help: _header
 	${info }
 	@echo Opciones:
-	@echo ---------------------------------
+	@echo ------------------------------------------
 	@echo start / stop / restart / stop-all
 	@echo start-dev / start-prod
 	@echo workspace
@@ -22,24 +22,24 @@ help: _header
 	@echo redis-cli / redis-flush
 	@echo stats
 	@echo clean
-	@echo --------------------------------------------------------
+	@echo ------------------------------------------
 
 _urls: _header
 	${info }
 	@echo Sitios disponibles:
-	@echo ----------------------------------------------
+	@echo ------------------------------------------------------
 	@echo [Sitio web] https://plantilla-laravel.test
 	@echo [phpMyAdmin] https://phpmyadmin.plantilla-laravel.test
-	@echo ----------------------------------------------
+	@echo ------------------------------------------------------
 
 _urls-dev: _header
 	${info }
 	@echo Sitios disponibles:
-	@echo ------------------------------------------------
+	@echo --------------------------------------------------------
 	@echo [Sitio web] https://plantilla-laravel.test
 	@echo [phpMyAdmin] https://phpmyadmin.plantilla-laravel.test
 	@echo [MailCatcher] https://mailcatcher.plantilla-laravel.test
-	@echo ------------------------------------------------
+	@echo --------------------------------------------------------
 
 _header:
 	@echo -----------------
