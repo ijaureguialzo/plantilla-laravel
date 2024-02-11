@@ -17,7 +17,7 @@ help: _header
 	@echo test
 	@echo seed
 	@echo locales
-	@echo outdated / update / install
+	@echo outdated / update / install / install-prod
 	@echo build / build-dev
 	@echo redis-cli / redis-flush
 	@echo stats
@@ -59,7 +59,7 @@ start: _start-command _urls
 
 start-dev: _start-command-dev _urls-dev
 
-start-prod: _start-command-prod _urls
+start-prod: _start-command-prod install-prod _urls
 
 stop:
 	@docker compose stop
@@ -104,6 +104,10 @@ update:
 install:
 	@docker compose exec php composer install
 	@docker compose exec php npm install
+
+install-prod:
+	@docker compose exec php composer install --no-dev
+	@docker compose exec php npm install --omit=dev
 
 build:
 	@docker compose pull && docker compose build --pull
