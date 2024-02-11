@@ -31,7 +31,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
             return view('welcome');
         });
 
-        Route::resource('users', UserController::class);
+        Route::resource('users', UserController::class)->except(['show']);
         Route::resource('roles', RoleController::class);
         Route::resource('permissions', PermissionController::class);
     });
