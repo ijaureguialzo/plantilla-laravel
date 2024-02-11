@@ -21,7 +21,7 @@
         <tr>
             <th>#</th>
             <th>{{ __('Name') }}</th>
-            <th>{{ __('Action') }}</th>
+            <th>{{ __('Actions') }}</th>
         </tr>
         </thead>
         <tbody class="align-middle">
