@@ -28,7 +28,7 @@
             </tr>
             </thead>
             <tbody class="align-middle">
-            @foreach ($data as $key => $user)
+            @foreach ($users as $key => $user)
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
@@ -68,14 +68,14 @@
             </tbody>
             <tfoot>
             <tr>
-                <th colspan="5" class="border-0">{{ __('Total') }}: {{ $data->count() }}</th>
+                <th colspan="5" class="border-0">{{ __('Total') }}: {{ $users->count() }}</th>
             </tr>
             </tfoot>
         </table>
     </div>
 
     <div class="d-flex justify-content-center">
-        {!! $data->links() !!}
+        {!! $users->links() !!}
     </div>
 
 @endsection
