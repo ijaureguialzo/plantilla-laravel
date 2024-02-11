@@ -17,7 +17,7 @@
     @endif
 
     <div class="table-responsive">
-        <table class="table align-middle table-hover">
+        <table class="table table-hover">
             <thead>
             <tr class="table-dark">
                 <th>#</th>
