@@ -1,0 +1,19 @@
+.hover-link {
+    text-decoration: none;
+}
+
+.hover-link:hover {
+    text-decoration: underline;
+}
+
+.hover-background-active {
+    background-color: $primary;
+}
+
+.hover-background-active:hover {
+    background-color: $gray-700;
+}
+
+.hover-background:hover {
+    background-color: $gray-700;
+}

@@ -29,7 +29,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 
         Route::get('/', function () {
             return view('welcome');
-        });
+        })->name('home');
 
         Route::resource('users', UserController::class)->except(['show']);
         Route::resource('roles', RoleController::class)->except(['show']);
