@@ -77,6 +77,8 @@ test:
 
 seed:
 	@docker compose exec php php artisan migrate:fresh --seed
+	@docker compose exec php php artisan db:seed --class=PermissionTableSeeder
+	@docker compose exec php php artisan db:seed --class=CreateAdminUserSeeder
 
 locales:
 	@docker compose exec php php artisan translatable:export es

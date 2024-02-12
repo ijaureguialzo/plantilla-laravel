@@ -41,6 +41,15 @@
                 <!-- Authentication Links -->
                 @guest
                 @else
+                    @can('user-list')
+                        <li><a class="nav-link" href="{{ route('users.index') }}">Users</a></li>
+                    @endcan
+                    @can('role-list')
+                        <li><a class="nav-link" href="{{ route('roles.index') }}">Roles</a></li>
+                    @endcan
+                    @can('permission-list')
+                        <li><a class="nav-link" href="{{ route('permissions.index') }}">Permissions</a></li>
+                    @endcan
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
