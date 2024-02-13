@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="row mb-3">
-            <label class="col-2 form-label" for="email">{{ __('Email') }}</label>
+            <label class="col-2 form-label" for="email">{{ __('Email Address') }}</label>
             <div class="col-10">
                 <input class="form-control" type="text" id="email" name="email" placeholder=""
                        value="{{ old('email') ?: $user->email }}"/>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="row mb-3">
-            <label class="col-2 form-label" for="confirm-password">{{ __('Confirm password') }}</label>
+            <label class="col-2 form-label" for="confirm-password">{{ __('Confirm Password') }}</label>
             <div class="col-10">
                 <input class="form-control" type="password" id="confirm-password" name="confirm-password" placeholder=""
                        value="{{ old('confirm-password') }}"/>

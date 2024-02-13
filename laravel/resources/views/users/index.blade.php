@@ -22,7 +22,7 @@
             <tr class="table-dark">
                 <th>#</th>
                 <th>{{ __('Name') }}</th>
-                <th>{{ __('Email') }}</th>
+                <th>{{ __('Email Address') }}</th>
                 <th>{{ __('Roles') }}</th>
                 <th>{{ __('Actions') }}</th>
             </tr>

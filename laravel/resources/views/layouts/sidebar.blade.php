@@ -30,7 +30,7 @@
             ])
             <li class="nav-item">
                 @include('layouts.sidebar.dropdown', [
-                    'text' => __('Desplegable 1'),
+                    'text' => 'Desplegable 1',
                     'icon' => 'bi-list',
                     'collapse_id' => 'dash-collapse',
                 ])
@@ -38,22 +38,22 @@
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-1 ms-4">
                         @include('layouts.sidebar.nav-item-desplegable', [
                             'route' => '#',
-                            'text' => __('Test 1'),
+                            'text' => 'Test 1',
                         ])
                         @include('layouts.sidebar.nav-item-desplegable', [
                             'route' => '#',
-                            'text' => __('Test 2'),
+                            'text' => 'Test 2',
                         ])
                         @include('layouts.sidebar.nav-item-desplegable', [
                             'route' => '#',
-                            'text' => __('Test 3'),
+                            'text' => 'Test 3',
                         ])
                     </ul>
                 </div>
             </li>
             <li class="nav-item mb-2">
                 @include('layouts.sidebar.dropdown', [
-                    'text' => __('Desplegable 2'),
+                    'text' => 'Desplegable 2',
                     'icon' => 'bi-cloud',
                     'collapse_id' => 'home-collapse',
                 ])
@@ -61,34 +61,34 @@
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-1 ms-4">
                         @include('layouts.sidebar.nav-item-desplegable', [
                             'route' => '#',
-                            'text' => __('Test A'),
+                            'text' => 'Test A',
                             'icon' => 'bi-archive',
                         ])
                         @include('layouts.sidebar.nav-item-desplegable', [
                             'route' => '#',
-                            'text' => __('Test B'),
+                            'text' => 'Test B',
                             'icon' => 'bi-rocket',
                             'target' => '_blank',
                         ])
                         @include('layouts.sidebar.nav-item-desplegable', [
                             'route' => route('home'),
-                            'text' => __('Test C'),
+                            'text' => 'Test C',
                             'icon' => 'bi-apple',
                         ])
                         @include('layouts.sidebar.nav-item-desplegable', [
                             'route' => '#',
-                            'text' => __('Test D'),
+                            'text' => 'Test D',
                             'icon' => 'bi-android',
                         ])
                     </ul>
                 </div>
             </li>
             @include('layouts.sidebar.nav-title', [
-                'text' => __('Other'),
+                'text' => 'Other',
             ])
             @include('layouts.sidebar.nav-item', [
                 'route' => '#',
-                'text' => __('Test'),
+                'text' => 'Test',
                 'icon' => 'bi-compass',
                 'last' => true,
             ])
