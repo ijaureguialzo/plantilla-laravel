@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 15rem;">
+<div class="d-flex flex-column p-3 text-bg-dark col-12 col-sm-2">
     @auth
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="text-uppercase pt-2 pb-1 fw-semibold"

@@ -11,9 +11,9 @@
 
 @include('layouts.navbar')
 
-<main class="d-flex flex-grow-1">
+<main class="row flex-grow-1 m-0">
     @include('layouts.sidebar')
-    <div class="container-fluid p-4">
+    <div class="p-4 col-12 col-sm-10">
         @yield('content')
     </div>
 </main>

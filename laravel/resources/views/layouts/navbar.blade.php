@@ -1,19 +1,19 @@
 @php($debug_text_color = config('app.debug') ? 'text-dark' : '')
 @php($debug_navbar_color = config('app.debug') ? 'navbar-light bg-warning' : 'navbar-dark bg-primary')
 
-<nav class="navbar navbar-expand-md {{ $debug_navbar_color }} shadow-sm pe-3">
-    <a class="navbar-brand {{ $debug_text_color }} m-0 text-center"
+<nav class="navbar navbar-expand-md {{ $debug_navbar_color }} shadow-sm">
+    <a class="navbar-brand {{ $debug_text_color }} m-0 text-start ps-3 text-md-center ps-md-0"
        style="width: 15rem;"
        href="{{ route('home') }}">
         {{ config('app.name', 'Laravel') }}
     </a>
-    <button class="navbar-toggler" type="button"
+    <button class="navbar-toggler border-0" type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-        <span class="navbar-toggler-icon"></span>
+        <i class="bi bi-list {{ $debug_text_color }}"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse mx-3" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto"></ul>
         <ul class="navbar-nav ms-auto">
             @auth
@@ -30,10 +30,7 @@
                            href="{{ route('permissions.index') }}">Permissions</a></li>
                 @endcan
                 @canany(['user-list', 'role-list', 'permission-list'])
-                    <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
-                        <div class="vr d-none d-lg-flex h-100 mx-lg-2 {{ $debug_text_color }}"></div>
-                        <hr class="d-lg-none my-2 text-white-50">
-                    </li>
+                    @include('layouts.navbar-separator')
                 @endcanany
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown"
@@ -53,10 +50,7 @@
                         </form>
                     </div>
                 </li>
-                <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto d-none d-sm-block">
-                    <div class="vr d-none d-lg-flex h-100 mx-lg-2 {{ $debug_text_color }}"></div>
-                    <hr class="d-lg-none my-2 text-white-50">
-                </li>
+                @include('layouts.navbar-separator')
             @endauth
             <li class="nav-item dropdown">
                 <button
@@ -70,7 +64,7 @@
                     <i class="bi bi-circle-half me-1 theme-icon-active">
                         <use href="#circle-half"></use>
                     </i>
-                    <span class="d-lg-none ms-2" id="bd-theme-text">{{ __('Toggle theme') }}</span>
+                    <span class="d-md-none ms-2" id="bd-theme-text">{{ __('Toggle theme') }}</span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
                     <li>
