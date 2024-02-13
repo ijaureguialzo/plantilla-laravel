@@ -1,106 +1,97 @@
 <div class="d-flex flex-column p-3 text-bg-dark col-12 col-sm-2">
     @auth
         <ul class="nav nav-pills flex-column mb-auto">
-            <li class="text-uppercase pt-2 pb-1 fw-semibold"
-                style="font-size: .75em;">{{ __('Administrator') }}</li>
+            @include('layouts.sidebar.nav-title', [
+                'text' => __('Administrator'),
+            ])
+            @include('layouts.sidebar.nav-item', [
+                'route' => route('home'),
+                'text' => __('Home'),
+                'icon' => 'bi-house',
+            ])
+            @include('layouts.sidebar.nav-item', [
+                'route' => route('home'),
+                'text' => __('Dashboard'),
+                'icon' => 'bi-clipboard',
+                'active' => true,
+            ])
+            @include('layouts.sidebar.nav-item', [
+                'route' => route('home'),
+                'text' => __('Test'),
+                'icon' => 'bi-compass',
+                'target' => '_blank',
+                'last' => true,
+            ])
+            @include('layouts.sidebar.nav-title', [
+                'text' => __('User'),
+            ])
             <li class="nav-item">
-                <a href="/" target="_blank"
-                   class="btn px-3 nav-link text-light w-100 text-start hover-background">
-                    <div class="d-flex">
-                        <i class="bi bi-house me-2"></i>
-                        <span>{{ __('Home') }}</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/" target="_blank"
-                   class="btn px-3 nav-link text-light w-100 text-start hover-background-active">
-                    <div class="d-flex">
-                        <i class="bi bi-clipboard me-2"></i>
-                        <span>{{ __('Dashboard') }}</span>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/" target="_blank"
-                   class="btn px-3 nav-link text-light w-100 text-start hover-background">
-                    <div class="d-flex">
-                        <i class="bi bi-compass me-2"></i>
-                        <span>{{ __('Test') }}</span>
-                    </div>
-                </a>
-            </li>
-            <li class="text-uppercase pt-2 pb-1 fw-semibold"
-                style="font-size: .75em;">{{ __('User') }}</li>
-            <li class="nav-item">
-                <button
-                    class="btn btn-toggle dropdown-toggle px-3 nav-link collapsed text-light w-100 text-start hover-background"
-                    data-bs-toggle="collapse" data-bs-target="#dash-collapse" aria-expanded="true">
-                    <i class="bi bi-list me-1"></i>
-                    <span>{{ __('Desplegable') }}</span>
-                </button>
+                @include('layouts.sidebar.dropdown', [
+                    'text' => __('Desplegable 1'),
+                    'icon' => 'bi-list',
+                    'collapse_id' => 'dash-collapse',
+                ])
                 <div class="collapse" id="dash-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-1 ms-4">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-light">
-                                <div class="d-flex">
-                                    <span class="hover-link">{{ __('Dashboard') }}</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-light">
-                                <div class="d-flex">
-                                    <span class="hover-link">{{ __('Home') }}</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link text-light">
-                                <div class="d-flex">
-                                    <span class="hover-link">{{ __('Dashboard') }}</span>
-                                </div>
-                            </a>
-                        </li>
+                        @include('layouts.sidebar.nav-item-desplegable', [
+                            'route' => route('home'),
+                            'text' => __('Test 1'),
+                        ])
+                        @include('layouts.sidebar.nav-item-desplegable', [
+                            'route' => route('home'),
+                            'text' => __('Test 2'),
+                            'active' => true,
+                        ])
+                        @include('layouts.sidebar.nav-item-desplegable', [
+                            'route' => route('home'),
+                            'text' => __('Test 3'),
+                        ])
                     </ul>
                 </div>
             </li>
             <li class="nav-item mb-2">
-                <button
-                    class="btn btn-toggle dropdown-toggle px-3 nav-link collapsed text-light w-100 text-start hover-background-active"
-                    data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                    <i class="bi bi-rocket me-1"></i>
-                    <span>{{ __('Desplegable 2') }}</span>
-                </button>
+                @include('layouts.sidebar.dropdown', [
+                    'text' => __('Desplegable 2'),
+                    'icon' => 'bi-cloud',
+                    'collapse_id' => 'home-collapse',
+                    'active' => true,
+                ])
                 <div class="collapse" id="home-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-1 ms-4">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-light">
-                                <div class="d-flex">
-                                    <i class="bi bi-clipboard me-2"></i>
-                                    <span class="hover-link">{{ __('Dashboard') }}</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-light">
-                                <div class="d-flex">
-                                    <i class="bi bi-house me-2"></i>
-                                    <span class="hover-link">{{ __('Home') }}</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link text-light">
-                                <div class="d-flex">
-                                    <i class="bi bi-clipboard me-2"></i>
-                                    <span class="hover-link">{{ __('Dashboard') }}</span>
-                                </div>
-                            </a>
-                        </li>
+                        @include('layouts.sidebar.nav-item-desplegable', [
+                            'route' => route('home'),
+                            'text' => __('Test A'),
+                            'icon' => 'bi-archive',
+                        ])
+                        @include('layouts.sidebar.nav-item-desplegable', [
+                            'route' => route('home'),
+                            'text' => __('Test B'),
+                            'icon' => 'bi-rocket',
+                            'target' => '_blank',
+                        ])
+                        @include('layouts.sidebar.nav-item-desplegable', [
+                            'route' => route('home'),
+                            'text' => __('Test C'),
+                            'icon' => 'bi-apple',
+                            'active' => true,
+                        ])
+                        @include('layouts.sidebar.nav-item-desplegable', [
+                            'route' => route('home'),
+                            'text' => __('Test D'),
+                            'icon' => 'bi-android',
+                        ])
                     </ul>
                 </div>
             </li>
+            @include('layouts.sidebar.nav-title', [
+                'text' => __('Other'),
+            ])
+            @include('layouts.sidebar.nav-item', [
+                'route' => route('home'),
+                'text' => __('Test'),
+                'icon' => 'bi-compass',
+                'last' => true,
+            ])
         </ul>
     @endauth
 </div>
