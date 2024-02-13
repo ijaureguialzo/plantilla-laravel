@@ -3,7 +3,7 @@
        @isset($target)
            target="{{ $target }}"
        @endisset
-       class="nav-link text-light {{ isset($active) ? 'hover-background-active' : '' }}">
+       class="nav-link text-light {{ request()->fullUrlIs($route) ? 'hover-background-active' : '' }}">
         <div class="d-flex">
             @isset($icon)
                 <i class="bi {{ $icon }} me-2"></i>

@@ -10,16 +10,19 @@
                 'icon' => 'bi-house',
             ])
             @include('layouts.sidebar.nav-item', [
-                'route' => route('home'),
-                'text' => __('Dashboard'),
-                'icon' => 'bi-clipboard',
-                'active' => true,
+                'route' => route('users.index'),
+                'text' => __('Users'),
+                'icon' => 'bi-person',
             ])
             @include('layouts.sidebar.nav-item', [
-                'route' => route('home'),
-                'text' => __('Test'),
-                'icon' => 'bi-compass',
-                'target' => '_blank',
+                'route' => route('roles.index'),
+                'text' => __('Roles'),
+                'icon' => 'bi-person-badge',
+            ])
+            @include('layouts.sidebar.nav-item', [
+                'route' => route('permissions.index'),
+                'text' => __('Permissions'),
+                'icon' => 'bi-key',
                 'last' => true,
             ])
             @include('layouts.sidebar.nav-title', [
@@ -34,16 +37,15 @@
                 <div class="collapse" id="dash-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-1 ms-4">
                         @include('layouts.sidebar.nav-item-desplegable', [
-                            'route' => route('home'),
+                            'route' => '#',
                             'text' => __('Test 1'),
                         ])
                         @include('layouts.sidebar.nav-item-desplegable', [
-                            'route' => route('home'),
+                            'route' => '#',
                             'text' => __('Test 2'),
-                            'active' => true,
                         ])
                         @include('layouts.sidebar.nav-item-desplegable', [
-                            'route' => route('home'),
+                            'route' => '#',
                             'text' => __('Test 3'),
                         ])
                     </ul>
@@ -54,17 +56,16 @@
                     'text' => __('Desplegable 2'),
                     'icon' => 'bi-cloud',
                     'collapse_id' => 'home-collapse',
-                    'active' => true,
                 ])
                 <div class="collapse" id="home-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-1 ms-4">
                         @include('layouts.sidebar.nav-item-desplegable', [
-                            'route' => route('home'),
+                            'route' => '#',
                             'text' => __('Test A'),
                             'icon' => 'bi-archive',
                         ])
                         @include('layouts.sidebar.nav-item-desplegable', [
-                            'route' => route('home'),
+                            'route' => '#',
                             'text' => __('Test B'),
                             'icon' => 'bi-rocket',
                             'target' => '_blank',
@@ -73,10 +74,9 @@
                             'route' => route('home'),
                             'text' => __('Test C'),
                             'icon' => 'bi-apple',
-                            'active' => true,
                         ])
                         @include('layouts.sidebar.nav-item-desplegable', [
-                            'route' => route('home'),
+                            'route' => '#',
                             'text' => __('Test D'),
                             'icon' => 'bi-android',
                         ])
@@ -87,7 +87,7 @@
                 'text' => __('Other'),
             ])
             @include('layouts.sidebar.nav-item', [
-                'route' => route('home'),
+                'route' => '#',
                 'text' => __('Test'),
                 'icon' => 'bi-compass',
                 'last' => true,
