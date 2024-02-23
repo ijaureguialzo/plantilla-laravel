@@ -106,10 +106,12 @@ update:
 install:
 	@docker compose exec php composer install
 	@docker compose exec php npm install
+	@docker compose exec php npm run build
 
 install-prod:
 	@docker compose exec php composer install --no-dev
-	@docker compose exec php npm install --omit=dev
+	@docker compose exec php npm install
+	@docker compose exec php npm run build
 
 build:
 	@docker compose pull && docker compose build --pull
