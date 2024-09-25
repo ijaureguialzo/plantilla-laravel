@@ -3,10 +3,10 @@ services:
   https-portal:
     environment:
       DOMAINS: >
-        mailcatcher.plantilla-laravel.test -> http://mailcatcher:1080,
+        mailpit.safe-exam.test -> http://mailpit:8025,
         ${HTTPS_PORTAL_SITES}
     depends_on:
-      - mailcatcher
+      - mailpit
 
   php:
     image: plantilla-laravel-php-dev
@@ -18,5 +18,5 @@ services:
       - PMA_USER=root
       - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD}
 
-  mailcatcher:
-    image: stpaquet/alpinemailcatcher:${MAILCATCHER_VERSION:-latest}
+  mailpit:
+    image: axllent/mailpit:${MAILPIT_VERSION:-latest}

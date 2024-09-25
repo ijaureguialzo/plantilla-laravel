@@ -38,7 +38,7 @@ _urls-dev: _header
 	@echo --------------------------------------------------------
 	@echo [Sitio web] https://plantilla-laravel.test
 	@echo [phpMyAdmin] https://phpmyadmin.plantilla-laravel.test
-	@echo [MailCatcher] https://mailcatcher.plantilla-laravel.test
+	@echo [Mailpit] https://mailpit.plantilla-laravel.test
 	@echo --------------------------------------------------------
 
 _header:
