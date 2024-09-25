@@ -13,7 +13,7 @@ help: _header
 	@echo ------------------------------------------
 	@echo start / stop / restart / stop-all
 	@echo start-dev / start-prod
-	@echo workspace
+	@echo workspace / workspace-root
 	@echo test
 	@echo seed
 	@echo locales
@@ -71,6 +71,9 @@ stop-all:
 
 workspace:
 	@docker compose exec php /bin/bash
+
+workspace-root:
+	@docker compose exec --user root php /bin/bash
 
 test:
 	@docker compose exec php php artisan test
