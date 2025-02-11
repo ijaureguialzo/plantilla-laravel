@@ -24,6 +24,7 @@ return [
     'boolean'              => 'El campo :attribute debe tener un valor verdadero o falso.',
     'can'                  => 'El campo :attribute contiene un valor no autorizado.',
     'confirmed'            => 'La confirmación de :attribute no coincide.',
+    'contains'             => 'Al campo :attribute le falta un valor obligatorio.',
     'current_password'     => 'La contraseña es incorrecta.',
     'date'                 => 'El campo :attribute debe ser una fecha válida.',
     'date_equals'          => 'El campo :attribute debe ser una fecha igual a :date.',
@@ -66,6 +67,7 @@ return [
     'ipv4'                 => 'El campo :attribute debe ser una dirección IPv4 válida.',
     'ipv6'                 => 'El campo :attribute debe ser una dirección IPv6 válida.',
     'json'                 => 'El campo :attribute debe ser una cadena JSON válida.',
+    'list'                 => 'El campo :attribute debe ser una lista.',
     'lowercase'            => 'El campo :attribute debe estar en minúscula.',
     'lt'                   => [
         'array'   => 'El campo :attribute debe tener menos de :value elementos.',
@@ -126,6 +128,7 @@ return [
     'required_array_keys'  => 'El campo :attribute debe contener entradas para: :values.',
     'required_if'          => 'El campo :attribute es obligatorio cuando :other es :value.',
     'required_if_accepted' => 'El campo :attribute es obligatorio si :other es aceptado.',
+    'required_if_declined' => 'El campo :attribute es obligatorio si :other es rechazado.',
     'required_unless'      => 'El campo :attribute es obligatorio a menos que :other esté en :values.',
     'required_with'        => 'El campo :attribute es obligatorio cuando :values está presente.',
     'required_with_all'    => 'El campo :attribute es obligatorio cuando :values están presentes.',

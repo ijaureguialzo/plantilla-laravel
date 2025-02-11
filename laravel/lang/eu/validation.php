@@ -24,6 +24,7 @@ return [
     'boolean'              => ':Attribute-(r)en balioa egia edo gezurra izan behar da.',
     'can'                  => ':Attribute eremuak baimenik gabeko balio bat dauka.',
     'confirmed'            => ':Attribute-(r)en berrespena ez dator bat.',
+    'contains'             => ':attribute eremuari beharrezko balio bat falta zaio.',
     'current_password'     => 'Pasahitza okerra da.',
     'date'                 => ':Attribute ez da baliozko data.',
     'date_equals'          => 'The :attribute bat izan behar du data berdina :date.',
@@ -66,6 +67,7 @@ return [
     'ipv4'                 => ':Attribute baliozko IPv4 helbidea izan behar da.',
     'ipv6'                 => ':Attribute baliozko IPv6 helbidea izan behar da.',
     'json'                 => ':Attribute baliozko JSON karaktere-katea izan behar da.',
+    'list'                 => ':attribute eremuak zerrenda bat izan behar du.',
     'lowercase'            => ':Attributeak minuskula izan behar du.',
     'lt'                   => [
         'array'   => ':Attribute-(e)k :value elementu baino gutxiago izan behar ditu.',
@@ -126,6 +128,7 @@ return [
     'required_array_keys'  => ':Attribute eremuak honako sarrerak izan behar ditu: :values.',
     'required_if'          => ':Attribute derrigorrezkoa da :other :value denean.',
     'required_if_accepted' => ':Attribute eremua beharrezkoa da :other onartzen denean.',
+    'required_if_declined' => ':attribute eremua beharrezkoa da :other baztertzen denean.',
     'required_unless'      => ':Attribute derrigorrezkoa da :other :values-(e)n egon ezean.',
     'required_with'        => ':Attribute derrigorrezkoa da :values dagoenean.',
     'required_with_all'    => ':Attribute derrigorrezkoa da :values daudenean.',
