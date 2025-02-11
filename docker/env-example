@@ -1,8 +1,8 @@
 # Versiones de los contenedores
-PHP_VERSION=8.3
-ALPINE_VERSION=3.19
-MARIADB_VERSION=10.11
-REDIS_VERSION=7.2
+PHP_VERSION=8.4
+ALPINE_VERSION=3.21
+MARIADB_VERSION=11.4
+REDIS_VERSION=7
 PHPMYADMIN_VERSION=latest
 PHPREDISADMIN_VERSION=latest
 NGINX_VERSION=mainline
@@ -17,9 +17,12 @@ MYSQL_PASSWORD=12345Abcde
 # Prefijo para los contenedores
 COMPOSE_PROJECT_NAME=plantilla-laravel
 
+# Nombre de dominio
+DOMAIN=plantilla-laravel.test
+
 # Sitios web
-HTTPS_PORTAL_SITES=plantilla-laravel.test -> http://nginx:80, www.plantilla-laravel.test => https://plantilla-laravel.test, phpmyadmin.plantilla-laravel.test -> http://phpmyadmin:80,
+HTTPS_PORTAL_SITES=${DOMAIN} -> http://nginx:80, www.${DOMAIN} => https://${DOMAIN}, phpmyadmin.${DOMAIN} -> http://phpmyadmin:80,
 HTTPS_PORTAL_STAGE=local
 
 # Servidor de correo saliente en producción
-POSTFIX_ALLOWED_SENDER_DOMAINS=plantilla-laravel.test
+POSTFIX_ALLOWED_SENDER_DOMAINS=${DOMAIN}

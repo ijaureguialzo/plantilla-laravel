@@ -3,7 +3,7 @@ services:
   https-portal:
     environment:
       DOMAINS: >
-        mailpit.safe-exam.test -> http://mailpit:8025,
+        mailpit.${DOMAIN} -> http://mailpit:8025,
         ${HTTPS_PORTAL_SITES}
     depends_on:
       - mailpit
